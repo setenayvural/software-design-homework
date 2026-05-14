@@ -1,0 +1,15 @@
+package notification;
+
+import config.AppConfig;
+
+public class EmailNotification implements Notification{
+	@Override
+    public void send(String studentName, String foodName) {
+
+        AppConfig config = AppConfig.getInstance();
+
+        System.out.println("Sending EMAIL notification...");
+        System.out.println("Dear " + studentName + ", your order for " + foodName + " has been received by " + config.getUniversityName());
+	}
+
+}
